@@ -735,22 +735,24 @@
 
               <div class="mb-12">
                 <div class="flex justify-center mb-10">
-                  <div class="inline-flex bg-neutral-100 rounded-full p-1 animate__animated animate__fadeIn"
+                  <div class="inline-flex overflow-x-auto max-w-full pb-2 hide-scrollbar bg-neutral-100 rounded-full p-1 animate__animated animate__fadeIn"
                     role="tablist" id="specialty-tabs">
-                    <button class="px-4 py-2 rounded-full text-sm font-medium specialty-tab active"
-                      data-target="tab-1">Kidney Cancer</button>
-                    <button class="px-4 py-2 rounded-full text-sm font-medium specialty-tab"
-                      data-target="tab-2">Andrology</button>
-                    <button class="px-4 py-2 rounded-full text-sm font-medium specialty-tab" data-target="tab-3">Penile
-                      Reconstruction</button>
-                    <button class="px-4 py-2 rounded-full text-sm font-medium specialty-tab"
-                      data-target="tab-4">Prostate</button>
-                    <button class="px-4 py-2 rounded-full text-sm font-medium specialty-tab" data-target="tab-5">Kidney
-                      Stones</button>
-                    <button class="px-4 py-2 rounded-full text-sm font-medium specialty-tab" data-target="tab-6">Bladder
-                      Cancer</button>
-                    <button class="px-4 py-2 rounded-full text-sm font-medium specialty-tab"
-                      data-target="tab-7">Orthopedic</button>
+                    <div class="flex whitespace-nowrap px-2">
+                      <button class="px-4 py-2 rounded-full text-sm font-medium specialty-tab active"
+                        data-target="tab-1">Kidney Cancer</button>
+                      <button class="px-4 py-2 rounded-full text-sm font-medium specialty-tab"
+                        data-target="tab-2">Andrology</button>
+                      <button class="px-4 py-2 rounded-full text-sm font-medium specialty-tab" data-target="tab-3">Penile
+                        Reconstruction</button>
+                      <button class="px-4 py-2 rounded-full text-sm font-medium specialty-tab"
+                        data-target="tab-4">Prostate</button>
+                      <button class="px-4 py-2 rounded-full text-sm font-medium specialty-tab" data-target="tab-5">Kidney
+                        Stones</button>
+                      <button class="px-4 py-2 rounded-full text-sm font-medium specialty-tab" data-target="tab-6">Bladder
+                        Cancer</button>
+                      <button class="px-4 py-2 rounded-full text-sm font-medium specialty-tab"
+                        data-target="tab-7">Orthopedic</button>
+                    </div>
                   </div>
                 </div>
 
@@ -783,7 +785,7 @@
                       <div class="md:w-2/3">
                         <div class="bg-neutral-50 p-6 rounded-xl h-full">
                           <h4 class="text-xl font-semibold mb-4 text-neutral-800">Treatment Details</h4>
-                          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#1E88E5] mb-2">Laparoscopic Radical Nephrectomy</h5>
                               <p class="text-neutral-600 text-sm mb-3">A minimally invasive procedure to remove the
@@ -1046,41 +1048,80 @@
           <script>
             document.addEventListener('DOMContentLoaded', function () {
               const tabs = document.querySelectorAll('.specialty-tab');
+              
+              // Add active tab styling function
+              function setActiveTab(tab) {
+                // Remove active class from all tabs
+                tabs.forEach(t => {
+                  t.classList.remove('active');
+                  t.classList.remove('bg-[#1E88E5]');
+                  t.classList.remove('text-white');
+                });
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                tab.classList.add('bg-[#1E88E5]');
+                tab.classList.add('text-white');
+                
+                // Hide all tab panes
+                const tabPanes = document.querySelectorAll('.tab-pane');
+                tabPanes.forEach(pane => pane.classList.add('hidden'));
+                
+                // Show the selected tab pane
+                const targetId = tab.getAttribute('data-target');
+                document.getElementById(targetId).classList.remove('hidden');
+                document.getElementById(targetId).classList.add('animate__animated', 'animate__fadeIn');
+                
+                // Scroll tab into view if on mobile
+                if (window.innerWidth < 768) {
+                  tab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                }
+              }
 
               tabs.forEach(tab => {
                 tab.addEventListener('click', () => {
-                  // Remove active class from all tabs
-                  tabs.forEach(t => {
-                    t.classList.remove('active');
-                    t.classList.remove('bg-[#1E88E5]');
-                    t.classList.remove('text-white');
-                  });
-
-                  // Add active class to clicked tab
-                  tab.classList.add('active');
-                  tab.classList.add('bg-[#1E88E5]');
-                  tab.classList.add('text-white');
-
-                  // Hide all tab panes
-                  const tabPanes = document.querySelectorAll('.tab-pane');
-                  tabPanes.forEach(pane => pane.classList.add('hidden'));
-
-                  // Show the selected tab pane
-                  const targetId = tab.getAttribute('data-target');
-                  document.getElementById(targetId).classList.remove('hidden');
-                  document.getElementById(targetId).classList.add('animate__animated', 'animate__fadeIn');
+                  setActiveTab(tab);
                 });
               });
 
               // Set initial active state
               const initialActiveTab = document.querySelector('.specialty-tab.active');
               if (initialActiveTab) {
-                initialActiveTab.classList.add('bg-[#1E88E5]', 'text-white');
-                const targetId = initialActiveTab.getAttribute('data-target');
-                document.getElementById(targetId).classList.remove('hidden');
+                setActiveTab(initialActiveTab);
               }
+              
+              // Handle window resize events
+              window.addEventListener('resize', function() {
+                // Update any responsive behaviors if needed
+              });
             });
           </script>
+          
+          <style>
+            /* Hide scrollbar but keep functionality */
+            .hide-scrollbar {
+              -ms-overflow-style: none;  /* IE and Edge */
+              scrollbar-width: none;  /* Firefox */
+            }
+            .hide-scrollbar::-webkit-scrollbar {
+              display: none;  /* Chrome, Safari, Opera */
+            }
+            
+            /* Active tab styling */
+            .specialty-tab.active {
+              background-color: #1E88E5;
+              color: white;
+            }
+            
+            /* Responsive adjustments for specialty tabs */
+            @media (max-width: 640px) {
+              .specialty-tab {
+                padding-left: 12px;
+                padding-right: 12px;
+                font-size: 0.875rem;
+              }
+            }
+          </style>
         </div>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
