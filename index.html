@@ -227,9 +227,17 @@
 
     /* Subtle bounce for hero arrow */
     @keyframes bounceSubtle {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(8px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(8px);
+      }
     }
+
     .bounce-subtle {
       animation: bounceSubtle 2s infinite;
     }
@@ -257,7 +265,8 @@
                 <!-- Remove logo from header -->
                 <a href="#hero" class="text-2xl font-bold text-primary-500 flex items-center space-x-2">
                   <!-- <img src="logo.png" alt="MedRetreats 369 Logo" class="h-8 w-auto mr-2" /> -->
-                  <span class="text-white">Med<span class="text-[#1E88E5]">Retreats</span> <span class="text-[#FF5722]">369</span></span>
+                  <span class="text-white">Med<span class="text-[#1E88E5]">Retreats</span> <span
+                      class="text-[#FF5722]">369</span></span>
                 </a>
                 <div class="hidden md:flex space-x-6">
                   <a href="#hero" class="hover:text-[#FF5722] transition-colors duration-300">Home</a>
@@ -303,13 +312,13 @@
               document.addEventListener('DOMContentLoaded', function () {
                 const mobileMenuButton = document.getElementById('mobile-menu-button');
                 const mobileMenu = document.getElementById('mobile-menu');
-          
+
                 mobileMenuButton.addEventListener('click', function () {
                   const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
                   mobileMenuButton.setAttribute('aria-expanded', !expanded);
                   mobileMenu.classList.toggle('hidden');
                 });
-          
+
                 // Close mobile menu when clicking on a link
                 const mobileLinks = mobileMenu.querySelectorAll('a');
                 mobileLinks.forEach(link => {
@@ -327,361 +336,423 @@
       <element id="f6bfcc4a-f1f4-4b58-8381-43612fdf135d" data-section-id="f6bfcc4a-f1f4-4b58-8381-43612fdf135d">
 
 
-        <section id="hero"
-  class="relative text-white min-h-[90vh] flex items-center overflow-hidden">
-  <!-- Full width hero background image -->
-  <div class="absolute inset-0 z-0">
-    <img src="./hero.jpg" alt="Hero Background" class="w-full h-full object-cover" />
-    <div class="absolute inset-0 bg-gradient-to-r from-neutral-900/80 to-neutral-800/60"></div>
-    <div class="absolute inset-0 bg-black opacity-30"></div>
-    <div class="absolute inset-0 bg-pattern opacity-20"></div>
-  </div>
-  
-  <!-- Animated background elements with reduced opacity for better image visibility -->
-  <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-    <div class="absolute w-64 h-64 rounded-full bg-[#1E88E5] opacity-10 -top-20 -left-20 animate__animated animate__pulse animate__infinite animate__slow"></div>
-    <div class="absolute w-96 h-96 rounded-full bg-[#26A69A] opacity-10 bottom-0 right-0 animate__animated animate__pulse animate__infinite animate__slower"></div>
-    <div class="absolute w-80 h-80 rounded-full bg-[#FF5722] opacity-5 top-1/2 left-1/3 animate__animated animate__pulse animate__infinite"></div>
-  </div>
-  
-  <div class="container mx-auto px-4 md:px-6 py-16 relative z-10">
-    <div class="flex flex-col md:flex-row items-center gap-10">
-      <!-- Hero Text Content with improved contrast for better readability over image -->
-      <div class="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
-        <div class="inline-block p-2 bg-black/30 backdrop-blur-sm rounded-lg border border-white/20 mb-4 shadow-lg">
-          <span class="text-[#1E88E5] font-medium">Your Health Journey Begins Here</span>
-        </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight text-shadow-lg">
-          <span class="text-white">Med<span class="text-[#1E88E5]">Retreats</span> <span class="text-[#FF5722]">369</span></span>
-        </h1>
-        <h2 class="text-xl sm:text-2xl md:text-3xl font-medium mb-6 text-white text-shadow-md">Discover Wellness Beyond Borders</h2>
-        <p class="text-base sm:text-lg text-white mb-8 max-w-lg mx-auto md:mx-0 bg-black/20 p-4 rounded-lg backdrop-blur-sm">
-          Your premier destination for world-class medical treatments in India at affordable costs with comprehensive support throughout your healthcare journey.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center md:justify-start">
-          <a href="#contact"
-            class="bg-[#FF5722] hover:bg-[#FF7043] text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
-            Get Free Consultation
-          </a>
-          <a href="#about"
-            class="bg-black/30 hover:bg-black/50 text-white border-2 border-white/30 font-bold py-3 px-8 rounded-lg transition-all duration-300 text-center backdrop-blur-sm shadow-lg">
-            Learn More
-          </a>
-        </div>
-        <!-- Mobile: Show scroll indicator below buttons -->
-        <div class="mt-8 md:hidden flex justify-center">
-          <a href="#about" class="text-white opacity-70 hover:opacity-100 transition-all">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 bounce-subtle" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </a>
-        </div>
-      </div>
-      
-      <!-- Hero Logo Visual with glass effect for better contrast over background image -->
-      <div class="w-full md:w-1/2 flex justify-center md:justify-end items-center relative mb-8 md:mb-0">
-        <div class="relative flex flex-col items-center">
-          <!-- Enhanced glass effect behind the logo -->
-          <div class="absolute inset-0 -m-6 bg-black/30 backdrop-blur-md rounded-2xl shadow-xl"></div>
-          <!-- Bigger logo for hero -->
-          <img src="logo.png" alt="MedRetreats 369 Logo"
-            class="h-32 w-auto sm:h-40 md:h-56 lg:h-64 xl:h-72 2xl:h-80 drop-shadow-xl transition-all duration-300 relative" />
-          <div class="bg-black/50 backdrop-blur-md rounded-xl p-6 border border-white/10 shadow-2xl mt-8 w-full max-w-xs md:max-w-sm">
-            <h3 class="text-lg md:text-xl font-semibold mb-4 text-center">World-Class Healthcare in India</h3>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="bg-white/10 hover:bg-white/15 p-4 rounded-lg text-center transition-all duration-300">
-                <div class="text-[#1E88E5] text-3xl mb-2">
-                  <i class="fas fa-hospital"></i>
-                </div>
-                <h4 class="font-medium text-sm">Top Hospitals</h4>
-              </div>
-              <div class="bg-white/10 hover:bg-white/15 p-4 rounded-lg text-center transition-all duration-300">
-                <div class="text-[#26A69A] text-3xl mb-2">
-                  <i class="fas fa-user-md"></i>
-                </div>
-                <h4 class="font-medium text-sm">Expert Doctors</h4>
-              </div>
-              <div class="bg-white/10 hover:bg-white/15 p-4 rounded-lg text-center transition-all duration-300">
-                <div class="text-[#FF5722] text-3xl mb-2">
-                  <i class="fas fa-dollar-sign"></i>
-                </div>
-                <h4 class="font-medium text-sm">Cost Effective</h4>
-              </div>
-              <div class="bg-white/10 hover:bg-white/15 p-4 rounded-lg text-center transition-all duration-300">
-                <div class="text-[#1E88E5] text-3xl mb-2">
-                  <i class="fas fa-hands-helping"></i>
-                </div>
-                <h4 class="font-medium text-sm">Full Support</h4>
-              </div>
+        <section id="hero" class="relative text-white min-h-[90vh] flex items-center overflow-hidden">
+          <!-- Full width hero background image -->
+          <div class="absolute inset-0 z-0">
+            <img src="./hero.jpg" alt="Hero Background" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-r from-neutral-900/80 to-neutral-800/60"></div>
+            <div class="absolute inset-0 bg-black opacity-30"></div>
+            <div class="absolute inset-0 bg-pattern opacity-20"></div>
+          </div>
+
+          <!-- Animated background elements with reduced opacity for better image visibility -->
+          <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+            <div
+              class="absolute w-64 h-64 rounded-full bg-[#1E88E5] opacity-10 -top-20 -left-20 animate__animated animate__pulse animate__infinite animate__slow">
             </div>
-            <div class="mt-6 text-center">
-              <div class="inline-flex items-center bg-white/10 rounded-lg px-4 py-2 relative hover:bg-white/20 transition-all duration-300">
-                <span class="animate-ping absolute h-3 w-3 rounded-full bg-[#FF5722] opacity-75 left-0"></span>
-                <span class="relative rounded-full h-2 w-2 bg-[#FF5722]"></span>
-                <span class="ml-3 text-sm">Helping patients from 20+ countries</span>
-              </div>
+            <div
+              class="absolute w-96 h-96 rounded-full bg-[#26A69A] opacity-10 bottom-0 right-0 animate__animated animate__pulse animate__infinite animate__slower">
+            </div>
+            <div
+              class="absolute w-80 h-80 rounded-full bg-[#FF5722] opacity-5 top-1/2 left-1/3 animate__animated animate__pulse animate__infinite">
             </div>
           </div>
-          <!-- Floating accreditation logos with improved visibility -->
-          <div class="absolute -bottom-8 -right-4 bg-black/40 backdrop-blur-lg p-3 rounded-lg transform rotate-3 shadow-xl hidden md:flex space-x-3 items-center border border-white/10">
-            <img src="fortis.png" alt="Fortis" class="w-8 h-8 rounded-full object-contain bg-white p-1" />
-            <img src="max.png" alt="Max" class="w-8 h-8 rounded-full object-contain bg-white p-1" />
-            <img src="oriana.png" alt="Oriana" class="w-8 h-8 rounded-full object-contain bg-white p-1" />
+
+          <div class="container mx-auto px-4 md:px-6 py-16 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+              <!-- Hero Text Content with improved contrast for better readability over image -->
+              <div class="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
+                <div
+                  class="inline-block p-2 bg-black/30 backdrop-blur-sm rounded-lg border border-white/20 mb-4 shadow-lg">
+                  <span class="text-[#1E88E5] font-medium">Your Health Journey Begins Here</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight text-shadow-lg">
+                  <span class="text-white">Med<span class="text-[#1E88E5]">Retreats</span> <span
+                      class="text-[#FF5722]">369</span></span>
+                </h1>
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-medium mb-6 text-white text-shadow-md">Discover Wellness
+                  Beyond Borders</h2>
+                <p
+                  class="text-base sm:text-lg text-white mb-8 max-w-lg mx-auto md:mx-0 bg-black/20 p-4 rounded-lg backdrop-blur-sm">
+                  Your premier destination for world-class medical treatments in India at affordable costs with
+                  comprehensive support throughout your healthcare journey.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center md:justify-start">
+                  <a href="#contact"
+                    class="bg-[#FF5722] hover:bg-[#FF7043] text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
+                    Get Free Consultation
+                  </a>
+                  <a href="#about"
+                    class="bg-black/30 hover:bg-black/50 text-white border-2 border-white/30 font-bold py-3 px-8 rounded-lg transition-all duration-300 text-center backdrop-blur-sm shadow-lg">
+                    Learn More
+                  </a>
+                </div>
+                <!-- Mobile: Show scroll indicator below buttons -->
+                <div class="mt-8 md:hidden flex justify-center">
+                  <a href="#about" class="text-white opacity-70 hover:opacity-100 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 bounce-subtle" fill="none"
+                      viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Hero Logo Visual with glass effect for better contrast over background image -->
+              <div class="w-full md:w-1/2 flex justify-center md:justify-end items-center relative mb-8 md:mb-0">
+                <div class="relative flex flex-col items-center">
+                  <!-- Enhanced glass effect behind the logo -->
+                  <div class="absolute inset-0 -m-6 bg-black/30 backdrop-blur-md rounded-2xl shadow-xl"></div>
+                  <!-- Bigger logo for hero -->
+                  <img src="logo.png" alt="MedRetreats 369 Logo"
+                    class="h-32 w-auto sm:h-40 md:h-56 lg:h-64 xl:h-72 2xl:h-80 drop-shadow-xl transition-all duration-300 relative" />
+                  <div
+                    class="bg-black/50 backdrop-blur-md rounded-xl p-6 border border-white/10 shadow-2xl mt-8 w-full max-w-xs md:max-w-sm">
+                    <h3 class="text-lg md:text-xl font-semibold mb-4 text-center">World-Class Healthcare in India</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="bg-white/10 hover:bg-white/15 p-4 rounded-lg text-center transition-all duration-300">
+                        <div class="text-[#1E88E5] text-3xl mb-2">
+                          <i class="fas fa-hospital"></i>
+                        </div>
+                        <h4 class="font-medium text-sm">Top Hospitals</h4>
+                      </div>
+                      <div class="bg-white/10 hover:bg-white/15 p-4 rounded-lg text-center transition-all duration-300">
+                        <div class="text-[#26A69A] text-3xl mb-2">
+                          <i class="fas fa-user-md"></i>
+                        </div>
+                        <h4 class="font-medium text-sm">Expert Doctors</h4>
+                      </div>
+                      <div class="bg-white/10 hover:bg-white/15 p-4 rounded-lg text-center transition-all duration-300">
+                        <div class="text-[#FF5722] text-3xl mb-2">
+                          <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h4 class="font-medium text-sm">Cost Effective</h4>
+                      </div>
+                      <div class="bg-white/10 hover:bg-white/15 p-4 rounded-lg text-center transition-all duration-300">
+                        <div class="text-[#1E88E5] text-3xl mb-2">
+                          <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h4 class="font-medium text-sm">Full Support</h4>
+                      </div>
+                    </div>
+                    <div class="mt-6 text-center">
+                      <div
+                        class="inline-flex items-center bg-white/10 rounded-lg px-4 py-2 relative hover:bg-white/20 transition-all duration-300">
+                        <span class="animate-ping absolute h-3 w-3 rounded-full bg-[#FF5722] opacity-75 left-0"></span>
+                        <span class="relative rounded-full h-2 w-2 bg-[#FF5722]"></span>
+                        <span class="ml-3 text-sm">Helping patients from 20+ countries</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Floating accreditation logos with improved visibility -->
+                  <div
+                    class="absolute -bottom-8 -right-4 bg-black/40 backdrop-blur-lg p-3 rounded-lg transform rotate-3 shadow-xl hidden md:flex space-x-3 items-center border border-white/10">
+                    <img src="fortis.png" alt="Fortis" class="w-8 h-8 rounded-full object-contain bg-white p-1" />
+                    <img src="max.png" alt="Max" class="w-8 h-8 rounded-full object-contain bg-white p-1" />
+                    <img src="oriana.png" alt="Oriana" class="w-8 h-8 rounded-full object-contain bg-white p-1" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Desktop: Scroll indicator at bottom center with improved visibility -->
+            <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 hidden md:block">
+              <a href="#about"
+                class="text-white opacity-70 hover:opacity-100 transition-all bg-black/30 rounded-full p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 bounce-subtle" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </a>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Desktop: Scroll indicator at bottom center with improved visibility -->
-    <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 hidden md:block">
-      <a href="#about" class="text-white opacity-70 hover:opacity-100 transition-all bg-black/30 rounded-full p-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 bounce-subtle" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-      </a>
-    </div>
-  </div>
-</section>
+        </section>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
       </element>
-        <!-- How It Works Section -->
-        <element id="how-it-works" data-section-id="how-it-works">
-          <div id="root">
-            <section class="py-16 bg-gradient-to-r from-[#1E88E5]/5 to-[#FF5722]/5">
-              <div class="container mx-auto px-4 md:px-6">
-                <div class="text-center mb-12 animate__animated animate__fadeIn">
-                  <span class="text-[#FF5722] font-semibold text-lg">HOW IT WORKS</span>
-                  <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4 text-neutral-800">Simple Step-by-Step Guide</h2>
-                  <div class="w-24 h-1 bg-[#1E88E5] mx-auto mb-6"></div>
-                  <p class="max-w-3xl mx-auto text-neutral-600">Our streamlined process ensures a seamless medical journey from start to finish</p>
+      <!-- How It Works Section -->
+      <element id="how-it-works" data-section-id="how-it-works">
+        <div id="root">
+          <section class="py-16 bg-gradient-to-r from-[#1E88E5]/5 to-[#FF5722]/5">
+            <div class="container mx-auto px-4 md:px-6">
+              <div class="text-center mb-12 animate__animated animate__fadeIn">
+                <span class="text-[#FF5722] font-semibold text-lg">HOW IT WORKS</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4 text-neutral-800">Simple Step-by-Step Guide</h2>
+                <div class="w-24 h-1 bg-[#1E88E5] mx-auto mb-6"></div>
+                <p class="max-w-3xl mx-auto text-neutral-600">Our streamlined process ensures a seamless medical journey
+                  from start to finish</p>
+              </div>
+
+              <div class="flex flex-wrap justify-center items-center gap-2 md:gap-4 max-w-5xl mx-auto">
+                <div class="flex items-center">
+                  <div
+                    class="w-10 h-10 rounded-full bg-[#1E88E5] text-white flex items-center justify-center font-bold text-sm md:text-base">
+                    1</div>
+                  <span class="ml-2 font-medium">Inquiry</span>
+                </div>
+                <i class="fas fa-arrow-right text-[#1E88E5] mx-1"></i>
+                <div class="flex items-center">
+                  <div
+                    class="w-10 h-10 rounded-full bg-[#26A69A] text-white flex items-center justify-center font-bold text-sm md:text-base">
+                    2</div>
+                  <span class="ml-2 font-medium">Medical Consultation</span>
+                </div>
+                <i class="fas fa-arrow-right text-[#26A69A] mx-1"></i>
+                <div class="flex items-center">
+                  <div
+                    class="w-10 h-10 rounded-full bg-[#FF5722] text-white flex items-center justify-center font-bold text-sm md:text-base">
+                    3</div>
+                  <span class="ml-2 font-medium">Travel Planning</span>
+                </div>
+                <i class="fas fa-arrow-right text-[#FF5722] mx-1"></i>
+                <div class="flex items-center">
+                  <div
+                    class="w-10 h-10 rounded-full bg-[#1E88E5] text-white flex items-center justify-center font-bold text-sm md:text-base">
+                    4</div>
+                  <span class="ml-2 font-medium">Arrival</span>
+                </div>
+                <i class="fas fa-arrow-right text-[#1E88E5] mx-1"></i>
+                <div class="flex items-center">
+                  <div
+                    class="w-10 h-10 rounded-full bg-[#26A69A] text-white flex items-center justify-center font-bold text-sm md:text-base">
+                    5</div>
+                  <span class="ml-2 font-medium">Treatment</span>
+                </div>
+                <i class="fas fa-arrow-right text-[#26A69A] mx-1"></i>
+                <div class="flex items-center">
+                  <div
+                    class="w-10 h-10 rounded-full bg-[#FF5722] text-white flex items-center justify-center font-bold text-sm md:text-base">
+                    6</div>
+                  <span class="ml-2 font-medium">Recovery</span>
+                </div>
+                <i class="fas fa-arrow-right text-[#FF5722] mx-1"></i>
+                <div class="flex items-center">
+                  <div
+                    class="w-10 h-10 rounded-full bg-[#1E88E5] text-white flex items-center justify-center font-bold text-sm md:text-base">
+                    7</div>
+                  <span class="ml-2 font-medium">Return</span>
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <div class="mt-12 text-center">
+                <a href="#contact"
+                  class="inline-flex items-center px-6 py-3 bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 transition duration-300">
+                  <span>Start Your Medical Journey</span>
+                  <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </element>
+
+      <!-- Regions Served Section -->
+      <element id="regions-served" data-section-id="regions-served">
+        <div id="root">
+          <section class="py-12 bg-gradient-to-r from-[#1E88E5]/5 to-[#FF5722]/5">
+            <div class="container mx-auto px-4 md:px-6">
+              <div class="text-center animate__animated animate__fadeIn">
+                <h2 class="text-2xl md:text-3xl font-bold text-neutral-800 mb-8">
+                  Serving patients across the <span class="text-[#1E88E5]">Middle East</span>,
+                  <span class="text-[#26A69A]">Gulf</span>, <span class="text-[#FF5722]">South Asia</span>
+                  <span class="text-[#00897B]"> & Africa</span>
+                  with trusted healthcare solutions
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto mt-10">
+                  <!-- Middle East -->
+                  <div
+                    class="bg-white p-6 rounded-xl shadow-md border-t-4 border-[#1E88E5] hover:transform hover:translateY(-5px) transition-all duration-300">
+                    <div
+                      class="bg-[#1E88E5] bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                      <i class="fas fa-globe-asia text-[#1E88E5] text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-800 mb-3">Middle East</h3>
+                    <p class="text-neutral-600 mb-4">Specialized care for patients from UAE, Qatar, Bahrain, Jordan, and
+                      across the Middle East region.</p>
+                    <div class="flex flex-wrap justify-center gap-2">
+                      <span class="px-3 py-1 bg-[#1E88E5]/10 text-[#1E88E5] rounded-full text-xs">UAE</span>
+                      <span class="px-3 py-1 bg-[#1E88E5]/10 text-[#1E88E5] rounded-full text-xs">Qatar</span>
+                      <span class="px-3 py-1 bg-[#1E88E5]/10 text-[#1E88E5] rounded-full text-xs">Saudi Arabia</span>
+                      <span class="px-3 py-1 bg-[#1E88E5]/10 text-[#1E88E5] rounded-full text-xs">Jordan</span>
+                    </div>
+                  </div>
+
+                  <!-- Gulf -->
+                  <div
+                    class="bg-white p-6 rounded-xl shadow-md border-t-4 border-[#26A69A] hover:transform hover:translateY(-5px) transition-all duration-300">
+                    <div
+                      class="bg-[#26A69A] bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                      <i class="fas fa-map-marked-alt text-[#26A69A] text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-800 mb-3">Gulf Region</h3>
+                    <p class="text-neutral-600 mb-4">Customized healthcare journeys for patients from Kuwait, Oman, and
+                      the entire GCC region.</p>
+                    <div class="flex flex-wrap justify-center gap-2">
+                      <span class="px-3 py-1 bg-[#26A69A]/10 text-[#26A69A] rounded-full text-xs">Kuwait</span>
+                      <span class="px-3 py-1 bg-[#26A69A]/10 text-[#26A69A] rounded-full text-xs">Oman</span>
+                      <span class="px-3 py-1 bg-[#26A69A]/10 text-[#26A69A] rounded-full text-xs">Bahrain</span>
+                      <span class="px-3 py-1 bg-[#26A69A]/10 text-[#26A69A] rounded-full text-xs">GCC</span>
+                    </div>
+                  </div>
+
+                  <!-- South Asia -->
+                  <div
+                    class="bg-white p-6 rounded-xl shadow-md border-t-4 border-[#FF5722] hover:transform hover:translateY(-5px) transition-all duration-300">
+                    <div
+                      class="bg-[#FF5722] bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                      <i class="fas fa-mountain text-[#FF5722] text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-800 mb-3">South Asia</h3>
+                    <p class="text-neutral-600 mb-4">Supporting patients from Nepal, Sri Lanka and neighboring South
+                      Asian countries.</p>
+                    <div class="flex flex-wrap justify-center gap-2">
+                      <span class="px-3 py-1 bg-[#FF5722]/10 text-[#FF5722] rounded-full text-xs">Nepal</span>
+                      <span class="px-3 py-1 bg-[#FF5722]/10 text-[#FF5722] rounded-full text-xs">Sri Lanka</span>
+                      <span class="px-3 py-1 bg-[#FF5722]/10 text-[#FF5722] rounded-full text-xs">Maldives</span>
+                    </div>
+                  </div>
+
+                  <!-- Africa -->
+                  <div
+                    class="bg-white p-6 rounded-xl shadow-md border-t-4 border-[#00897B] hover:transform hover:translateY(-5px) transition-all duration-300">
+                    <div
+                      class="bg-[#00897B] bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                      <i class="fas fa-globe-africa text-[#00897B] text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-800 mb-3">Africa</h3>
+                    <p class="text-neutral-600 mb-4">Dedicated support for patients from African countries including
+                      Chad, Sudan, South Africa, and more.</p>
+                    <div class="flex flex-wrap justify-center gap-2">
+                      <span class="px-3 py-1 bg-[#00897B]/10 text-[#00897B] rounded-full text-xs">Chad</span>
+                      <span class="px-3 py-1 bg-[#00897B]/10 text-[#00897B] rounded-full text-xs">Sudan</span>
+                      <span class="px-3 py-1 bg-[#00897B]/10 text-[#00897B] rounded-full text-xs">South Africa</span>
+                      <span class="px-3 py-1 bg-[#00897B]/10 text-[#00897B] rounded-full text-xs">Nigeria</span>
+                      <span class="px-3 py-1 bg-[#00897B]/10 text-[#00897B] rounded-full text-xs">Kenya</span>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="flex flex-wrap justify-center items-center gap-2 md:gap-4 max-w-5xl mx-auto">
-                  <div class="flex items-center">
-                    <div class="w-10 h-10 rounded-full bg-[#1E88E5] text-white flex items-center justify-center font-bold text-sm md:text-base">1</div>
-                    <span class="ml-2 font-medium">Inquiry</span>
-                  </div>
-                  <i class="fas fa-arrow-right text-[#1E88E5] mx-1"></i>
-                  <div class="flex items-center">
-                    <div class="w-10 h-10 rounded-full bg-[#26A69A] text-white flex items-center justify-center font-bold text-sm md:text-base">2</div>
-                    <span class="ml-2 font-medium">Medical Consultation</span>
-                  </div>
-                  <i class="fas fa-arrow-right text-[#26A69A] mx-1"></i>
-                  <div class="flex items-center">
-                    <div class="w-10 h-10 rounded-full bg-[#FF5722] text-white flex items-center justify-center font-bold text-sm md:text-base">3</div>
-                    <span class="ml-2 font-medium">Travel Planning</span>
-                  </div>
-                  <i class="fas fa-arrow-right text-[#FF5722] mx-1"></i>
-                  <div class="flex items-center">
-                    <div class="w-10 h-10 rounded-full bg-[#1E88E5] text-white flex items-center justify-center font-bold text-sm md:text-base">4</div>
-                    <span class="ml-2 font-medium">Arrival</span>
-                  </div>
-                  <i class="fas fa-arrow-right text-[#1E88E5] mx-1"></i>
-                  <div class="flex items-center">
-                    <div class="w-10 h-10 rounded-full bg-[#26A69A] text-white flex items-center justify-center font-bold text-sm md:text-base">5</div>
-                    <span class="ml-2 font-medium">Treatment</span>
-                  </div>
-                  <i class="fas fa-arrow-right text-[#26A69A] mx-1"></i>
-                  <div class="flex items-center">
-                    <div class="w-10 h-10 rounded-full bg-[#FF5722] text-white flex items-center justify-center font-bold text-sm md:text-base">6</div>
-                    <span class="ml-2 font-medium">Recovery</span>
-                  </div>
-                  <i class="fas fa-arrow-right text-[#FF5722] mx-1"></i>
-                  <div class="flex items-center">
-                    <div class="w-10 h-10 rounded-full bg-[#1E88E5] text-white flex items-center justify-center font-bold text-sm md:text-base">7</div>
-                    <span class="ml-2 font-medium">Return</span>
-                  </div>
-                </div>
-
-                <!-- CTA -->
                 <div class="mt-12 text-center">
-                  <a href="#contact" class="inline-flex items-center px-6 py-3 bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 transition duration-300">
-                    <span>Start Your Medical Journey</span>
+                  <p class="font-medium text-lg text-neutral-700 mb-5">Cultural sensitivity and personalized care for
+                    each region</p>
+                  <a href="#contact"
+                    class="inline-flex items-center px-6 py-3 bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 transition duration-300">
+                    <span>Contact our regional specialists</span>
                     <i class="fas fa-arrow-right ml-2"></i>
                   </a>
                 </div>
               </div>
-            </section>
-          </div>
-        </element>
+            </div>
+          </section>
+        </div>
+      </element>
 
-        <!-- Regions Served Section -->
-        <element id="regions-served" data-section-id="regions-served">
-          <div id="root">
-            <section class="py-12 bg-gradient-to-r from-[#1E88E5]/5 to-[#FF5722]/5">
-              <div class="container mx-auto px-4 md:px-6">
-                <div class="text-center animate__animated animate__fadeIn">
-                  <h2 class="text-2xl md:text-3xl font-bold text-neutral-800 mb-8">
-                    Serving patients across the <span class="text-[#1E88E5]">Middle East</span>, 
-                    <span class="text-[#26A69A]">Gulf</span>, <span class="text-[#FF5722]">South Asia</span>
-                    <span class="text-[#00897B]"> & Africa</span>
-                    with trusted healthcare solutions
-                  </h2>
-                  
-                  <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto mt-10">
-                    <!-- Middle East -->
-                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-[#1E88E5] hover:transform hover:translateY(-5px) transition-all duration-300">
-                      <div class="bg-[#1E88E5] bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <i class="fas fa-globe-asia text-[#1E88E5] text-2xl"></i>
-                      </div>
-                      <h3 class="text-xl font-bold text-neutral-800 mb-3">Middle East</h3>
-                      <p class="text-neutral-600 mb-4">Specialized care for patients from UAE, Qatar, Bahrain, Jordan, and across the Middle East region.</p>
-                      <div class="flex flex-wrap justify-center gap-2">
-                        <span class="px-3 py-1 bg-[#1E88E5]/10 text-[#1E88E5] rounded-full text-xs">UAE</span>
-                        <span class="px-3 py-1 bg-[#1E88E5]/10 text-[#1E88E5] rounded-full text-xs">Qatar</span>
-                        <span class="px-3 py-1 bg-[#1E88E5]/10 text-[#1E88E5] rounded-full text-xs">Saudi Arabia</span>
-                        <span class="px-3 py-1 bg-[#1E88E5]/10 text-[#1E88E5] rounded-full text-xs">Jordan</span>
-                      </div>
-                    </div>
-                    
-                    <!-- Gulf -->
-                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-[#26A69A] hover:transform hover:translateY(-5px) transition-all duration-300">
-                      <div class="bg-[#26A69A] bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <i class="fas fa-map-marked-alt text-[#26A69A] text-2xl"></i>
-                      </div>
-                      <h3 class="text-xl font-bold text-neutral-800 mb-3">Gulf Region</h3>
-                      <p class="text-neutral-600 mb-4">Customized healthcare journeys for patients from Kuwait, Oman, and the entire GCC region.</p>
-                      <div class="flex flex-wrap justify-center gap-2">
-                        <span class="px-3 py-1 bg-[#26A69A]/10 text-[#26A69A] rounded-full text-xs">Kuwait</span>
-                        <span class="px-3 py-1 bg-[#26A69A]/10 text-[#26A69A] rounded-full text-xs">Oman</span>
-                        <span class="px-3 py-1 bg-[#26A69A]/10 text-[#26A69A] rounded-full text-xs">Bahrain</span>
-                        <span class="px-3 py-1 bg-[#26A69A]/10 text-[#26A69A] rounded-full text-xs">GCC</span>
-                      </div>
-                    </div>
-                    
-                    <!-- South Asia -->
-                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-[#FF5722] hover:transform hover:translateY(-5px) transition-all duration-300">
-                      <div class="bg-[#FF5722] bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <i class="fas fa-mountain text-[#FF5722] text-2xl"></i>
-                      </div>
-                      <h3 class="text-xl font-bold text-neutral-800 mb-3">South Asia</h3>
-                      <p class="text-neutral-600 mb-4">Supporting patients from Nepal, Sri Lanka and neighboring South Asian countries.</p>
-                      <div class="flex flex-wrap justify-center gap-2">
-                        <span class="px-3 py-1 bg-[#FF5722]/10 text-[#FF5722] rounded-full text-xs">Nepal</span>
-                        <span class="px-3 py-1 bg-[#FF5722]/10 text-[#FF5722] rounded-full text-xs">Sri Lanka</span>
-                        <span class="px-3 py-1 bg-[#FF5722]/10 text-[#FF5722] rounded-full text-xs">Maldives</span>
-                      </div>
-                    </div>
+      <!-- Hospital Partners Section -->
+      <element id="hospital-partners" data-section-id="hospital-partners">
+        <div id="root">
+          <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 md:px-6">
+              <div class="text-center mb-12 animate__animated animate__fadeIn">
+                <span class="text-[#1E88E5] font-semibold text-lg">OUR HOSPITAL PARTNERS</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4 text-neutral-800">Leading Healthcare Providers</h2>
+                <div class="w-24 h-1 bg-[#FF5722] mx-auto mb-6"></div>
+                <p class="max-w-3xl mx-auto text-neutral-600">We partner with India's top hospitals to ensure
+                  world-class medical care for our patients</p>
+              </div>
 
-                    <!-- Africa -->
-                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-[#00897B] hover:transform hover:translateY(-5px) transition-all duration-300">
-                      <div class="bg-[#00897B] bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <i class="fas fa-globe-africa text-[#00897B] text-2xl"></i>
-                      </div>
-                      <h3 class="text-xl font-bold text-neutral-800 mb-3">Africa</h3>
-                      <p class="text-neutral-600 mb-4">Dedicated support for patients from African countries including Chad, Sudan, South Africa, and more.</p>
-                      <div class="flex flex-wrap justify-center gap-2">
-                        <span class="px-3 py-1 bg-[#00897B]/10 text-[#00897B] rounded-full text-xs">Chad</span>
-                        <span class="px-3 py-1 bg-[#00897B]/10 text-[#00897B] rounded-full text-xs">Sudan</span>
-                        <span class="px-3 py-1 bg-[#00897B]/10 text-[#00897B] rounded-full text-xs">South Africa</span>
-                        <span class="px-3 py-1 bg-[#00897B]/10 text-[#00897B] rounded-full text-xs">Nigeria</span>
-                        <span class="px-3 py-1 bg-[#00897B]/10 text-[#00897B] rounded-full text-xs">Kenya</span>
-                      </div>
-                    </div>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Fortis Healthcare -->
+                <div
+                  class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 flex flex-col items-center animate__animated animate__fadeInUp">
+                  <div class="mb-6 h-32 flex items-center">
+                    <img src="fortis.png" alt="Fortis Healthcare Logo" class="max-h-full">
                   </div>
-                  
-                  <div class="mt-12 text-center">
-                    <p class="font-medium text-lg text-neutral-700 mb-5">Cultural sensitivity and personalized care for each region</p>
-                    <a href="#contact" class="inline-flex items-center px-6 py-3 bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 transition duration-300">
-                      <span>Contact our regional specialists</span>
-                      <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
+                  <h3 class="text-xl font-bold text-neutral-800 mb-3">Fortis Healthcare</h3>
+                  <p class="text-neutral-600 text-center mb-4">One of India's leading integrated healthcare delivery
+                    service providers with 36+ hospitals nationwide.</p>
+                  <div class="mt-auto">
+                    <span class="px-4 py-2 bg-[#1E88E5]/10 text-[#1E88E5] rounded-full text-sm font-medium">JCI
+                      Accredited</span>
+                  </div>
+                </div>
+
+                <!-- Apollo Hospitals -->
+                <div
+                  class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 flex flex-col items-center animate__animated animate__fadeInUp"
+                  style="animation-delay: 0.2s;">
+                  <div class="mb-6 h-32 flex items-center">
+                    <img src="apollo.png" alt="Apollo Hospitals Logo" class="max-h-full">
+                  </div>
+                  <h3 class="text-xl font-bold text-neutral-800 mb-3">Apollo Hospitals</h3>
+                  <p class="text-neutral-600 text-center mb-4">Pioneering private healthcare in India with over 70
+                    hospitals and 400+ clinics across the country.</p>
+                  <div class="mt-auto">
+                    <span class="px-4 py-2 bg-[#1E88E5]/10 text-[#1E88E5] rounded-full text-sm font-medium">JCI
+                      Accredited</span>
+                  </div>
+                </div>
+
+                <!-- Max Healthcare -->
+                <div
+                  class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 flex flex-col items-center animate__animated animate__fadeInUp"
+                  style="animation-delay: 0.4s;">
+                  <div class="mb-6 h-32 flex items-center">
+                    <img src="max.png" alt="Max Healthcare Logo" class="max-h-full">
+                  </div>
+                  <h3 class="text-xl font-bold text-neutral-800 mb-3">Max Healthcare</h3>
+                  <p class="text-neutral-600 text-center mb-4">Leading hospital chain in North India with 17 facilities
+                    offering specialized medical excellence.</p>
+                  <div class="mt-auto">
+                    <span class="px-4 py-2 bg-[#1E88E5]/10 text-[#1E88E5] rounded-full text-sm font-medium">JCI
+                      Accredited</span>
+                  </div>
+                </div>
+
+                <!-- Oriana Hospital Varanasi -->
+                <div
+                  class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 flex flex-col items-center animate__animated animate__fadeInUp"
+                  style="animation-delay: 0.6s;">
+                  <div class="mb-6 h-32 flex items-center">
+                    <img src="oriana.png" alt="Oriana Hospital Varanasi Logo" class="max-h-full">
+                  </div>
+                  <h3 class="text-xl font-bold text-neutral-800 mb-3">Oriana Hospital, Varanasi</h3>
+                  <p class="text-neutral-600 text-center mb-4">A leading multi-specialty hospital in Varanasi, known for
+                    advanced medical care and patient-centric services.</p>
+                  <div class="mt-auto">
+                    <span class="px-4 py-2 bg-[#1E88E5]/10 text-[#1E88E5] rounded-full text-sm font-medium">NABH
+                      Accredited</span>
                   </div>
                 </div>
               </div>
-            </section>
-          </div>
-        </element>
-        
-        <!-- Hospital Partners Section -->
-        <element id="hospital-partners" data-section-id="hospital-partners">
-          <div id="root">
-            <section class="py-16 bg-white">
-              <div class="container mx-auto px-4 md:px-6">
-                <div class="text-center mb-12 animate__animated animate__fadeIn">
-                  <span class="text-[#1E88E5] font-semibold text-lg">OUR HOSPITAL PARTNERS</span>
-                  <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4 text-neutral-800">Leading Healthcare Providers</h2>
-                  <div class="w-24 h-1 bg-[#FF5722] mx-auto mb-6"></div>
-                  <p class="max-w-3xl mx-auto text-neutral-600">We partner with India's top hospitals to ensure world-class medical care for our patients</p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                  <!-- Fortis Healthcare -->
-                  <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 flex flex-col items-center animate__animated animate__fadeInUp">
-                    <div class="mb-6 h-32 flex items-center">
-                      <img src="fortis.png" alt="Fortis Healthcare Logo" class="max-h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-neutral-800 mb-3">Fortis Healthcare</h3>
-                    <p class="text-neutral-600 text-center mb-4">One of India's leading integrated healthcare delivery service providers with 36+ hospitals nationwide.</p>
-                    <div class="mt-auto">
-                      <span class="px-4 py-2 bg-[#1E88E5]/10 text-[#1E88E5] rounded-full text-sm font-medium">JCI Accredited</span>
-                    </div>
-                  </div>
-                  
-                  <!-- Apollo Hospitals -->
-                  <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 flex flex-col items-center animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
-                    <div class="mb-6 h-32 flex items-center">
-                      <img src="apollo.png" alt="Apollo Hospitals Logo" class="max-h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-neutral-800 mb-3">Apollo Hospitals</h3>
-                    <p class="text-neutral-600 text-center mb-4">Pioneering private healthcare in India with over 70 hospitals and 400+ clinics across the country.</p>
-                    <div class="mt-auto">
-                      <span class="px-4 py-2 bg-[#1E88E5]/10 text-[#1E88E5] rounded-full text-sm font-medium">JCI Accredited</span>
-                    </div>
-                  </div>
-                  
-                  <!-- Max Healthcare -->
-                  <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 flex flex-col items-center animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
-                    <div class="mb-6 h-32 flex items-center">
-                      <img src="max.png" alt="Max Healthcare Logo" class="max-h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-neutral-800 mb-3">Max Healthcare</h3>
-                    <p class="text-neutral-600 text-center mb-4">Leading hospital chain in North India with 17 facilities offering specialized medical excellence.</p>
-                    <div class="mt-auto">
-                      <span class="px-4 py-2 bg-[#1E88E5]/10 text-[#1E88E5] rounded-full text-sm font-medium">JCI Accredited</span>
-                    </div>
-                  </div>
 
-                  <!-- Oriana Hospital Varanasi -->
-                  <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 flex flex-col items-center animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
-                    <div class="mb-6 h-32 flex items-center">
-                      <img src="oriana.png" alt="Oriana Hospital Varanasi Logo" class="max-h-full">
-                    </div>
-                    <h3 class="text-xl font-bold text-neutral-800 mb-3">Oriana Hospital, Varanasi</h3>
-                    <p class="text-neutral-600 text-center mb-4">A leading multi-specialty hospital in Varanasi, known for advanced medical care and patient-centric services.</p>
-                    <div class="mt-auto">
-                      <span class="px-4 py-2 bg-[#1E88E5]/10 text-[#1E88E5] rounded-full text-sm font-medium">NABH Accredited</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="mt-12 text-center">
-                  <div class="p-4 bg-neutral-50 rounded-lg inline-block max-w-3xl mx-auto">
-                    <p class="text-neutral-700">
-                      <i class="fas fa-certificate text-[#FF5722] mr-2"></i>
-                      All our partner hospitals maintain international quality standards and are equipped with cutting-edge medical technology
-                    </p>
-                  </div>
-                </div>
-                
-                <div class="mt-10 text-center">
-                  <a href="#contact" class="inline-flex items-center px-6 py-3 bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 transition duration-300">
-                    <span>Schedule a consultation at our partner hospitals</span>
-                    <i class="fas fa-arrow-right ml-2"></i>
-                  </a>
+              <div class="mt-12 text-center">
+                <div class="p-4 bg-neutral-50 rounded-lg inline-block max-w-3xl mx-auto">
+                  <p class="text-neutral-700">
+                    <i class="fas fa-certificate text-[#FF5722] mr-2"></i>
+                    All our partner hospitals maintain international quality standards and are equipped with
+                    cutting-edge medical technology
+                  </p>
                 </div>
               </div>
-            </section>
-          </div>
-        </element>
-      
+
+              <div class="mt-10 text-center">
+                <a href="#contact"
+                  class="inline-flex items-center px-6 py-3 bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 transition duration-300">
+                  <span>Schedule a consultation at our partner hospitals</span>
+                  <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </element>
+
       <element id="ff0fa6c6-97c4-40ab-8730-799bb60f4fd5" data-section-id="ff0fa6c6-97c4-40ab-8730-799bb60f4fd5">
         <div id="root">
           <section id="about" class="py-20 bg-white">
@@ -917,7 +988,7 @@
                       Treatment Plans</span>
                   </div>
                 </div>
-                
+
 
                 <!-- Patient Support Card -->
                 <div
@@ -968,7 +1039,7 @@
       <element id="0a14fea2-bd1e-48ee-9c40-5522ddbe21bd" data-section-id="0a14fea2-bd1e-48ee-9c40-5522ddbe21bd">
 
         <div id="root">
-          
+
           <section id="specialties" class="py-20 bg-white">
             <div class="container mx-auto px-4 md:px-6">
               <div class="text-center mb-16 animate__animated animate__fadeIn">
@@ -979,10 +1050,11 @@
                 <p class="max-w-3xl mx-auto text-neutral-600">We offer expert medical services in these specialized
                   areas with cutting-edge technology and experienced professionals</p>
               </div>
-          
+
               <div class="mb-12">
                 <div class="flex justify-center mb-10">
-                    <div class="inline-flex overflow-x-auto max-w-full pb-2 hide-scrollbar bg-neutral-100 rounded-full p-1 animate__animated animate__fadeIn"
+                  <div
+                    class="inline-flex overflow-x-auto max-w-full pb-2 hide-scrollbar bg-neutral-100 rounded-full p-1 animate__animated animate__fadeIn"
                     role="tablist" id="specialty-tabs">
                     <div class="flex whitespace-nowrap px-2">
                       <button class="px-4 py-2 rounded-full text-sm font-medium specialty-tab active"
@@ -1022,10 +1094,10 @@
                     </div>
                   </div>
                 </div>
-          
+
                 <div class="specialty-content">
-          
-             
+
+
                   <div id="tab-7" class="tab-pane hidden">
                     <div class="flex flex-col md:flex-row gap-8">
                       <div class="md:w-1/3">
@@ -1035,7 +1107,8 @@
                             <i class="fas fa-bone text-[#FF9800] text-2xl"></i>
                           </div>
                           <h3 class="text-2xl font-bold mb-4">Orthopedic Treatments</h3>
-                          <p class="text-gray-300 mb-6">Advanced surgical and non-surgical solutions for bone, joint and musculoskeletal conditions with minimally invasive techniques.</p>
+                          <p class="text-gray-300 mb-6">Advanced surgical and non-surgical solutions for bone, joint and
+                            musculoskeletal conditions with minimally invasive techniques.</p>
                           <div class="mb-2 text-sm text-gray-400">Our orthopedic services include:</div>
                           <ul class="space-y-3">
                             <li class="flex items-center space-x-2">
@@ -1063,7 +1136,8 @@
                           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#FF9800] mb-2">Joint Replacement</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Advanced procedures for hip, knee and shoulder joints.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Advanced procedures for hip, knee and shoulder
+                                joints.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1100,7 +1174,10 @@
                           </div>
                           <div class="mt-6 bg-[#FF9800] bg-opacity-5 p-4 rounded-lg">
                             <h5 class="font-semibold text-neutral-800 mb-2">Why Choose Our Orthopedic Care?</h5>
-                            <p class="text-neutral-600 text-sm">Our orthopedic centers feature state-of-the-art operation theaters with navigation systems, robotic surgical assistants, and comprehensive rehabilitation programs. We provide personalized treatment plans with outcomes matching international standards at affordable costs.</p>
+                            <p class="text-neutral-600 text-sm">Our orthopedic centers feature state-of-the-art
+                              operation theaters with navigation systems, robotic surgical assistants, and comprehensive
+                              rehabilitation programs. We provide personalized treatment plans with outcomes matching
+                              international standards at affordable costs.</p>
                           </div>
                         </div>
                       </div>
@@ -1115,7 +1192,8 @@
                             <i class="fas fa-heartbeat text-[#E53935] text-2xl"></i>
                           </div>
                           <h3 class="text-2xl font-bold mb-4">Cardiology</h3>
-                          <p class="text-gray-300 mb-6">Comprehensive heart care with advanced diagnostic and treatment options for all cardiac conditions.</p>
+                          <p class="text-gray-300 mb-6">Comprehensive heart care with advanced diagnostic and treatment
+                            options for all cardiac conditions.</p>
                           <div class="mb-2 text-sm text-gray-400">Our cardiology services include:</div>
                           <ul class="space-y-3">
                             <li class="flex items-center space-x-2">
@@ -1143,7 +1221,8 @@
                           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#E53935] mb-2">Heart Bypass Surgery (CABG)</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Coronary artery bypass grafting to restore blood flow to the heart muscle.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Coronary artery bypass grafting to restore blood
+                                flow to the heart muscle.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1161,7 +1240,8 @@
                             </div>
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#E53935] mb-2">Angioplasty & Stents</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Non-surgical procedure to open blocked arteries and improve blood flow.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Non-surgical procedure to open blocked arteries
+                                and improve blood flow.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1180,7 +1260,10 @@
                           </div>
                           <div class="mt-6 bg-[#E53935] bg-opacity-5 p-4 rounded-lg">
                             <h5 class="font-semibold text-neutral-800 mb-2">Why Choose Our Cardiac Care?</h5>
-                            <p class="text-neutral-600 text-sm">Our cardiac centers feature cutting-edge technology including robotic-assisted surgery, hybrid operating rooms, and comprehensive cardiac rehabilitation programs. We provide personalized treatment plans with outcomes matching international standards at affordable costs.</p>
+                            <p class="text-neutral-600 text-sm">Our cardiac centers feature cutting-edge technology
+                              including robotic-assisted surgery, hybrid operating rooms, and comprehensive cardiac
+                              rehabilitation programs. We provide personalized treatment plans with outcomes matching
+                              international standards at affordable costs.</p>
                           </div>
                         </div>
                       </div>
@@ -1195,7 +1278,8 @@
                             <i class="fas fa-dna text-[#8E24AA] text-2xl"></i>
                           </div>
                           <h3 class="text-2xl font-bold mb-4">Oncology</h3>
-                          <p class="text-gray-300 mb-6">Comprehensive cancer care with advanced treatment options and personalized care plans.</p>
+                          <p class="text-gray-300 mb-6">Comprehensive cancer care with advanced treatment options and
+                            personalized care plans.</p>
                           <div class="mb-2 text-sm text-gray-400">Our oncology services include:</div>
                           <ul class="space-y-3">
                             <li class="flex items-center space-x-2">
@@ -1223,7 +1307,8 @@
                           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#8E24AA] mb-2">Precision Radiation Therapy</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Advanced radiation techniques that target tumors while sparing healthy tissue.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Advanced radiation techniques that target tumors
+                                while sparing healthy tissue.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1241,7 +1326,8 @@
                             </div>
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#8E24AA] mb-2">Immunotherapy</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Cutting-edge treatments that harness the body's immune system to fight cancer.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Cutting-edge treatments that harness the body's
+                                immune system to fight cancer.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1260,7 +1346,9 @@
                           </div>
                           <div class="mt-6 bg-[#8E24AA] bg-opacity-5 p-4 rounded-lg">
                             <h5 class="font-semibold text-neutral-800 mb-2">Multidisciplinary Cancer Care</h5>
-                            <p class="text-neutral-600 text-sm">Our cancer centers bring together surgical oncologists, medical oncologists, radiation oncologists, and support specialists to create comprehensive treatment plans tailored to each patient's unique needs.</p>
+                            <p class="text-neutral-600 text-sm">Our cancer centers bring together surgical oncologists,
+                              medical oncologists, radiation oncologists, and support specialists to create
+                              comprehensive treatment plans tailored to each patient's unique needs.</p>
                           </div>
                         </div>
                       </div>
@@ -1275,7 +1363,8 @@
                             <i class="fas fa-brain text-[#3949AB] text-2xl"></i>
                           </div>
                           <h3 class="text-2xl font-bold mb-4">Neurology & Neurosurgery</h3>
-                          <p class="text-gray-300 mb-6">Advanced treatments for neurological disorders and brain/spine conditions.</p>
+                          <p class="text-gray-300 mb-6">Advanced treatments for neurological disorders and brain/spine
+                            conditions.</p>
                           <div class="mb-2 text-sm text-gray-400">Our neurology services include:</div>
                           <ul class="space-y-3">
                             <li class="flex items-center space-x-2">
@@ -1303,7 +1392,8 @@
                           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#3949AB] mb-2">Brain Tumor Surgeries</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Minimally invasive and robotic-assisted procedures for brain tumors.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Minimally invasive and robotic-assisted
+                                procedures for brain tumors.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1321,7 +1411,8 @@
                             </div>
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#3949AB] mb-2">Spine Surgeries</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Advanced procedures for spinal disorders and injuries.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Advanced procedures for spinal disorders and
+                                injuries.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1340,7 +1431,9 @@
                           </div>
                           <div class="mt-6 bg-[#3949AB] bg-opacity-5 p-4 rounded-lg">
                             <h5 class="font-semibold text-neutral-800 mb-2">Comprehensive Neurological Care</h5>
-                            <p class="text-neutral-600 text-sm">Our neurology centers feature advanced neuroimaging, intraoperative MRI, and neuro-rehabilitation facilities. We provide personalized treatment plans with outcomes matching international standards.</p>
+                            <p class="text-neutral-600 text-sm">Our neurology centers feature advanced neuroimaging,
+                              intraoperative MRI, and neuro-rehabilitation facilities. We provide personalized treatment
+                              plans with outcomes matching international standards.</p>
                           </div>
                         </div>
                       </div>
@@ -1355,7 +1448,8 @@
                             <i class="fas fa-user-md text-[#FB8C00] text-2xl"></i>
                           </div>
                           <h3 class="text-2xl font-bold mb-4">Cosmetic & Plastic Surgery</h3>
-                          <p class="text-gray-300 mb-6">Enhance your appearance and confidence with our world-class cosmetic procedures.</p>
+                          <p class="text-gray-300 mb-6">Enhance your appearance and confidence with our world-class
+                            cosmetic procedures.</p>
                           <div class="mb-2 text-sm text-gray-400">Popular procedures include:</div>
                           <ul class="space-y-3">
                             <li class="flex items-center space-x-2">
@@ -1387,7 +1481,8 @@
                           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#FB8C00] mb-2">Facial Procedures</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Enhance your facial features with natural-looking results.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Enhance your facial features with natural-looking
+                                results.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1405,7 +1500,8 @@
                             </div>
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#FB8C00] mb-2">Body Contouring</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Achieve your desired body shape with advanced techniques.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Achieve your desired body shape with advanced
+                                techniques.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1424,7 +1520,10 @@
                           </div>
                           <div class="mt-6 bg-[#FB8C00] bg-opacity-5 p-4 rounded-lg">
                             <h5 class="font-semibold text-neutral-800 mb-2">Why Choose Our Cosmetic Surgery?</h5>
-                            <p class="text-neutral-600 text-sm">Our board-certified plastic surgeons use the latest techniques to deliver natural-looking results with minimal scarring. We offer comprehensive pre- and post-operative care to ensure optimal outcomes and patient satisfaction.</p>
+                            <p class="text-neutral-600 text-sm">Our board-certified plastic surgeons use the latest
+                              techniques to deliver natural-looking results with minimal scarring. We offer
+                              comprehensive pre- and post-operative care to ensure optimal outcomes and patient
+                              satisfaction.</p>
                           </div>
                         </div>
                       </div>
@@ -1439,7 +1538,8 @@
                             <i class="fas fa-baby text-[#7CB342] text-2xl"></i>
                           </div>
                           <h3 class="text-2xl font-bold mb-4">Fertility Treatments</h3>
-                          <p class="text-gray-300 mb-6">Comprehensive reproductive health services with high success rates and personalized care.</p>
+                          <p class="text-gray-300 mb-6">Comprehensive reproductive health services with high success
+                            rates and personalized care.</p>
                           <div class="mb-2 text-sm text-gray-400">Our fertility services include:</div>
                           <ul class="space-y-3">
                             <li class="flex items-center space-x-2">
@@ -1467,7 +1567,8 @@
                           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#7CB342] mb-2">IVF & Assisted Reproduction</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Advanced fertility treatments with high success rates.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Advanced fertility treatments with high success
+                                rates.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1485,7 +1586,8 @@
                             </div>
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#7CB342] mb-2">Surrogacy & Donor Programs</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Comprehensive support for alternative family building.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Comprehensive support for alternative family
+                                building.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1504,7 +1606,10 @@
                           </div>
                           <div class="mt-6 bg-[#7CB342] bg-opacity-5 p-4 rounded-lg">
                             <h5 class="font-semibold text-neutral-800 mb-2">Why Choose Our Fertility Center?</h5>
-                            <p class="text-neutral-600 text-sm">Our fertility specialists use cutting-edge technology and evidence-based protocols to maximize success rates. We provide compassionate, personalized care throughout your fertility journey, with transparent pricing and comprehensive support services.</p>
+                            <p class="text-neutral-600 text-sm">Our fertility specialists use cutting-edge technology
+                              and evidence-based protocols to maximize success rates. We provide compassionate,
+                              personalized care throughout your fertility journey, with transparent pricing and
+                              comprehensive support services.</p>
                           </div>
                         </div>
                       </div>
@@ -1519,7 +1624,8 @@
                             <i class="fa-solid fa-suitcase-medical text-[#43A047] text-2xl"></i>
                           </div>
                           <h3 class="text-2xl font-bold mb-4">Gastroenterology</h3>
-                          <p class="text-gray-300 mb-6">Comprehensive digestive health services with advanced diagnostic and treatment options.</p>
+                          <p class="text-gray-300 mb-6">Comprehensive digestive health services with advanced diagnostic
+                            and treatment options.</p>
                           <div class="mb-2 text-sm text-gray-400">Our gastroenterology services include:</div>
                           <ul class="space-y-3">
                             <li class="flex items-center space-x-2">
@@ -1547,7 +1653,8 @@
                           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#43A047] mb-2">Bariatric Surgery</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Advanced weight loss procedures with comprehensive follow-up care.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Advanced weight loss procedures with
+                                comprehensive follow-up care.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1565,7 +1672,8 @@
                             </div>
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#43A047] mb-2">Advanced Endoscopy</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Minimally invasive diagnostic and therapeutic procedures.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Minimally invasive diagnostic and therapeutic
+                                procedures.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1584,7 +1692,10 @@
                           </div>
                           <div class="mt-6 bg-[#43A047] bg-opacity-5 p-4 rounded-lg">
                             <h5 class="font-semibold text-neutral-800 mb-2">Comprehensive Digestive Care</h5>
-                            <p class="text-neutral-600 text-sm">Our gastroenterology centers feature advanced diagnostic tools including capsule endoscopy, endoscopic ultrasound, and motility studies. We provide personalized treatment plans for conditions like IBS, Crohn's disease, ulcerative colitis, and liver disorders.</p>
+                            <p class="text-neutral-600 text-sm">Our gastroenterology centers feature advanced diagnostic
+                              tools including capsule endoscopy, endoscopic ultrasound, and motility studies. We provide
+                              personalized treatment plans for conditions like IBS, Crohn's disease, ulcerative colitis,
+                              and liver disorders.</p>
                           </div>
                         </div>
                       </div>
@@ -1599,7 +1710,8 @@
                             <i class="fas fa-tooth text-[#00ACC1] text-2xl"></i>
                           </div>
                           <h3 class="text-2xl font-bold mb-4">Dentistry</h3>
-                          <p class="text-gray-300 mb-6">World-class dental care with advanced procedures at affordable prices.</p>
+                          <p class="text-gray-300 mb-6">World-class dental care with advanced procedures at affordable
+                            prices.</p>
                           <div class="mb-2 text-sm text-gray-400">Our dental services include:</div>
                           <ul class="space-y-3">
                             <li class="flex items-center space-x-2">
@@ -1627,7 +1739,8 @@
                           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#00ACC1] mb-2">Dental Implants</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Permanent solutions for missing teeth with natural-looking results.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Permanent solutions for missing teeth with
+                                natural-looking results.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1645,7 +1758,8 @@
                             </div>
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#00ACC1] mb-2">Cosmetic Dentistry</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Enhance your smile with our aesthetic treatments.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Enhance your smile with our aesthetic treatments.
+                              </p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1664,7 +1778,9 @@
                           </div>
                           <div class="mt-6 bg-[#00ACC1] bg-opacity-5 p-4 rounded-lg">
                             <h5 class="font-semibold text-neutral-800 mb-2">Why Choose Our Dental Care?</h5>
-                            <p class="text-neutral-600 text-sm">Our dental centers feature state-of-the-art equipment including digital X-rays, CAD/CAM technology, and laser dentistry. We provide pain-free treatments with international quality standards at a fraction of Western prices.</p>
+                            <p class="text-neutral-600 text-sm">Our dental centers feature state-of-the-art equipment
+                              including digital X-rays, CAD/CAM technology, and laser dentistry. We provide pain-free
+                              treatments with international quality standards at a fraction of Western prices.</p>
                           </div>
                         </div>
                       </div>
@@ -1679,7 +1795,8 @@
                             <i class="fas fa-eye text-[#5C6BC0] text-2xl"></i>
                           </div>
                           <h3 class="text-2xl font-bold mb-4">Ophthalmology</h3>
-                          <p class="text-gray-300 mb-6">Advanced eye care with cutting-edge vision correction and treatment options.</p>
+                          <p class="text-gray-300 mb-6">Advanced eye care with cutting-edge vision correction and
+                            treatment options.</p>
                           <div class="mb-2 text-sm text-gray-400">Our ophthalmology services include:</div>
                           <ul class="space-y-3">
                             <li class="flex items-center space-x-2">
@@ -1707,7 +1824,8 @@
                           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#5C6BC0] mb-2">Vision Correction</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Advanced procedures to correct refractive errors.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Advanced procedures to correct refractive errors.
+                              </p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1744,7 +1862,10 @@
                           </div>
                           <div class="mt-6 bg-[#5C6BC0] bg-opacity-5 p-4 rounded-lg">
                             <h5 class="font-semibold text-neutral-800 mb-2">Why Choose Our Eye Care?</h5>
-                            <p class="text-neutral-600 text-sm">Our ophthalmology centers feature the latest diagnostic and surgical equipment, including optical coherence tomography (OCT) and femtosecond lasers. We provide personalized treatment plans with outcomes matching international standards at affordable costs.</p>
+                            <p class="text-neutral-600 text-sm">Our ophthalmology centers feature the latest diagnostic
+                              and surgical equipment, including optical coherence tomography (OCT) and femtosecond
+                              lasers. We provide personalized treatment plans with outcomes matching international
+                              standards at affordable costs.</p>
                           </div>
                         </div>
                       </div>
@@ -1759,7 +1880,8 @@
                             <i class="fas fa-allergies text-[#F06292] text-2xl"></i>
                           </div>
                           <h3 class="text-2xl font-bold mb-4">Dermatology</h3>
-                          <p class="text-gray-300 mb-6">Comprehensive skin care with advanced treatments for all dermatological conditions.</p>
+                          <p class="text-gray-300 mb-6">Comprehensive skin care with advanced treatments for all
+                            dermatological conditions.</p>
                           <div class="mb-2 text-sm text-gray-400">Our dermatology services include:</div>
                           <ul class="space-y-3">
                             <li class="flex items-center space-x-2">
@@ -1787,7 +1909,8 @@
                           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#F06292] mb-2">Medical Dermatology</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Advanced treatments for skin conditions and diseases.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Advanced treatments for skin conditions and
+                                diseases.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1805,7 +1928,8 @@
                             </div>
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#F06292] mb-2">Cosmetic Dermatology</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Enhance your skin's appearance with our aesthetic treatments.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Enhance your skin's appearance with our aesthetic
+                                treatments.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1824,7 +1948,10 @@
                           </div>
                           <div class="mt-6 bg-[#F06292] bg-opacity-5 p-4 rounded-lg">
                             <h5 class="font-semibold text-neutral-800 mb-2">Why Choose Our Dermatology Care?</h5>
-                            <p class="text-neutral-600 text-sm">Our dermatology centers feature the latest diagnostic tools and treatment technologies, including phototherapy, laser treatments, and Mohs surgery for skin cancer. We provide personalized treatment plans with outcomes matching international standards.</p>
+                            <p class="text-neutral-600 text-sm">Our dermatology centers feature the latest diagnostic
+                              tools and treatment technologies, including phototherapy, laser treatments, and Mohs
+                              surgery for skin cancer. We provide personalized treatment plans with outcomes matching
+                              international standards.</p>
                           </div>
                         </div>
                       </div>
@@ -1839,7 +1966,8 @@
                             <i class="fas fa-lungs text-[#039BE5] text-2xl"></i>
                           </div>
                           <h3 class="text-2xl font-bold mb-4">Pulmonology</h3>
-                          <p class="text-gray-300 mb-6">Advanced respiratory care for lung diseases and breathing disorders.</p>
+                          <p class="text-gray-300 mb-6">Advanced respiratory care for lung diseases and breathing
+                            disorders.</p>
                           <div class="mb-2 text-sm text-gray-400">Our pulmonology services include:</div>
                           <ul class="space-y-3">
                             <li class="flex items-center space-x-2">
@@ -1867,7 +1995,8 @@
                           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#039BE5] mb-2">Chronic Lung Disease Care</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Comprehensive management of chronic respiratory conditions.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Comprehensive management of chronic respiratory
+                                conditions.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1885,7 +2014,8 @@
                             </div>
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#039BE5] mb-2">Advanced Procedures</h5>
-                              <p class="text-neutral-600 text-sm mb-3">State-of-the-art interventions for respiratory conditions.</p>
+                              <p class="text-neutral-600 text-sm mb-3">State-of-the-art interventions for respiratory
+                                conditions.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1904,7 +2034,10 @@
                           </div>
                           <div class="mt-6 bg-[#039BE5] bg-opacity-5 p-4 rounded-lg">
                             <h5 class="font-semibold text-neutral-800 mb-2">Why Choose Our Pulmonary Care?</h5>
-                            <p class="text-neutral-600 text-sm">Our pulmonology centers feature advanced diagnostic tools including pulmonary function tests, bronchoscopy, and sleep studies. We provide personalized treatment plans with outcomes matching international standards for respiratory conditions.</p>
+                            <p class="text-neutral-600 text-sm">Our pulmonology centers feature advanced diagnostic
+                              tools including pulmonary function tests, bronchoscopy, and sleep studies. We provide
+                              personalized treatment plans with outcomes matching international standards for
+                              respiratory conditions.</p>
                           </div>
                         </div>
                       </div>
@@ -1919,7 +2052,8 @@
                             <i class="fa-solid fa-suitcase-medical text-[#00897B] text-2xl"></i>
                           </div>
                           <h3 class="text-2xl font-bold mb-4">Urology</h3>
-                          <p class="text-gray-300 mb-6">Comprehensive care for urinary tract and male reproductive system conditions.</p>
+                          <p class="text-gray-300 mb-6">Comprehensive care for urinary tract and male reproductive
+                            system conditions.</p>
                           <div class="mb-2 text-sm text-gray-400">Our urology services include:</div>
                           <ul class="space-y-3">
                             <li class="flex items-center space-x-2">
@@ -1947,7 +2081,8 @@
                           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#00897B] mb-2">Kidney Stone Treatments</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Advanced minimally invasive procedures for stone removal.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Advanced minimally invasive procedures for stone
+                                removal.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -1984,7 +2119,10 @@
                           </div>
                           <div class="mt-6 bg-[#00897B] bg-opacity-5 p-4 rounded-lg">
                             <h5 class="font-semibold text-neutral-800 mb-2">Why Choose Our Urology Care?</h5>
-                            <p class="text-neutral-600 text-sm">Our urology centers feature state-of-the-art equipment including digital flexible ureteroscopes, laser lithotripters, and robotic surgical systems. We provide comprehensive care for all urological conditions with outcomes matching international standards.</p>
+                            <p class="text-neutral-600 text-sm">Our urology centers feature state-of-the-art equipment
+                              including digital flexible ureteroscopes, laser lithotripters, and robotic surgical
+                              systems. We provide comprehensive care for all urological conditions with outcomes
+                              matching international standards.</p>
                           </div>
                         </div>
                       </div>
@@ -1999,7 +2137,8 @@
                             <i class="fa-solid fa-suitcase-medical text-[#D81B60] text-2xl"></i>
                           </div>
                           <h3 class="text-2xl font-bold mb-4">Endocrinology</h3>
-                          <p class="text-gray-300 mb-6">Comprehensive care for hormonal and metabolic disorders with personalized treatment plans.</p>
+                          <p class="text-gray-300 mb-6">Comprehensive care for hormonal and metabolic disorders with
+                            personalized treatment plans.</p>
                           <div class="mb-2 text-sm text-gray-400">Our endocrinology services include:</div>
                           <ul class="space-y-3">
                             <li class="flex items-center space-x-2">
@@ -2027,7 +2166,8 @@
                           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#D81B60] mb-2">Diabetes Care</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Comprehensive management for all types of diabetes.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Comprehensive management for all types of
+                                diabetes.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -2045,7 +2185,8 @@
                             </div>
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#D81B60] mb-2">Thyroid Treatments</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Advanced care for thyroid disorders and cancers.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Advanced care for thyroid disorders and cancers.
+                              </p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -2064,7 +2205,10 @@
                           </div>
                           <div class="mt-6 bg-[#D81B60] bg-opacity-5 p-4 rounded-lg">
                             <h5 class="font-semibold text-neutral-800 mb-2">Why Choose Our Endocrinology Care?</h5>
-                            <p class="text-neutral-600 text-sm">Our endocrinology centers feature advanced diagnostic tools including hormone testing, thyroid ultrasound, and continuous glucose monitoring. We provide personalized treatment plans with outcomes matching international standards for hormonal and metabolic disorders.</p>
+                            <p class="text-neutral-600 text-sm">Our endocrinology centers feature advanced diagnostic
+                              tools including hormone testing, thyroid ultrasound, and continuous glucose monitoring. We
+                              provide personalized treatment plans with outcomes matching international standards for
+                              hormonal and metabolic disorders.</p>
                           </div>
                         </div>
                       </div>
@@ -2079,7 +2223,8 @@
                             <i class="fas fa-bone text-[#8D6E63] text-2xl"></i>
                           </div>
                           <h3 class="text-2xl font-bold mb-4">Rheumatology</h3>
-                          <p class="text-gray-300 mb-6">Specialized care for autoimmune disorders and chronic joint conditions.</p>
+                          <p class="text-gray-300 mb-6">Specialized care for autoimmune disorders and chronic joint
+                            conditions.</p>
                           <div class="mb-2 text-sm text-gray-400">Our rheumatology services include:</div>
                           <ul class="space-y-3">
                             <li class="flex items-center space-x-2">
@@ -2107,7 +2252,8 @@
                           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#8D6E63] mb-2">Autoimmune Disease Management</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Comprehensive treatment for autoimmune conditions.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Comprehensive treatment for autoimmune
+                                conditions.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -2125,7 +2271,8 @@
                             </div>
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#8D6E63] mb-2">Chronic Pain Solutions</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Multidisciplinary approach to pain management.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Multidisciplinary approach to pain management.
+                              </p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -2144,7 +2291,10 @@
                           </div>
                           <div class="mt-6 bg-[#8D6E63] bg-opacity-5 p-4 rounded-lg">
                             <h5 class="font-semibold text-neutral-800 mb-2">Why Choose Our Rheumatology Care?</h5>
-                            <p class="text-neutral-600 text-sm">Our rheumatology centers feature advanced diagnostic tools including ultrasound-guided joint assessments and comprehensive lab testing. We provide personalized treatment plans with outcomes matching international standards for autoimmune and musculoskeletal disorders.</p>
+                            <p class="text-neutral-600 text-sm">Our rheumatology centers feature advanced diagnostic
+                              tools including ultrasound-guided joint assessments and comprehensive lab testing. We
+                              provide personalized treatment plans with outcomes matching international standards for
+                              autoimmune and musculoskeletal disorders.</p>
                           </div>
                         </div>
                       </div>
@@ -2159,7 +2309,8 @@
                             <i class="fas fa-brain text-[#5E35B1] text-2xl"></i>
                           </div>
                           <h3 class="text-2xl font-bold mb-4">Mental Health & Psychiatry</h3>
-                          <p class="text-gray-300 mb-6">Comprehensive mental health services with compassionate, evidence-based care.</p>
+                          <p class="text-gray-300 mb-6">Comprehensive mental health services with compassionate,
+                            evidence-based care.</p>
                           <div class="mb-2 text-sm text-gray-400">Our mental health services include:</div>
                           <ul class="space-y-3">
                             <li class="flex items-center space-x-2">
@@ -2187,7 +2338,8 @@
                           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#5E35B1] mb-2">Addiction Treatment</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Comprehensive programs for substance abuse and behavioral addictions.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Comprehensive programs for substance abuse and
+                                behavioral addictions.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -2205,7 +2357,8 @@
                             </div>
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#5E35B1] mb-2">Mood Disorder Treatment</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Personalized care for depression, anxiety, and bipolar disorder.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Personalized care for depression, anxiety, and
+                                bipolar disorder.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -2224,7 +2377,10 @@
                           </div>
                           <div class="mt-6 bg-[#5E35B1] bg-opacity-5 p-4 rounded-lg">
                             <h5 class="font-semibold text-neutral-800 mb-2">Holistic Mental Health Care</h5>
-                            <p class="text-neutral-600 text-sm">Our mental health centers provide a healing environment with evidence-based treatments including psychotherapy, medication management, and innovative therapies like art therapy and mindfulness training. We focus on whole-person wellness with strict confidentiality.</p>
+                            <p class="text-neutral-600 text-sm">Our mental health centers provide a healing environment
+                              with evidence-based treatments including psychotherapy, medication management, and
+                              innovative therapies like art therapy and mindfulness training. We focus on whole-person
+                              wellness with strict confidentiality.</p>
                           </div>
                         </div>
                       </div>
@@ -2239,7 +2395,8 @@
                             <i class="fas fa-heart text-[#6A1B9A] text-2xl"></i>
                           </div>
                           <h3 class="text-2xl font-bold mb-4">Organ Transplants</h3>
-                          <p class="text-gray-300 mb-6">Life-saving transplant procedures with high success rates and comprehensive post-transplant care.</p>
+                          <p class="text-gray-300 mb-6">Life-saving transplant procedures with high success rates and
+                            comprehensive post-transplant care.</p>
                           <div class="mb-2 text-sm text-gray-400">Our transplant services include:</div>
                           <ul class="space-y-3">
                             <li class="flex items-center space-x-2">
@@ -2285,7 +2442,8 @@
                             </div>
                             <div class="bg-white p-5 rounded-lg shadow-sm border border-neutral-100">
                               <h5 class="font-bold text-[#6A1B9A] mb-2">Bone Marrow Transplants</h5>
-                              <p class="text-neutral-600 text-sm mb-3">Advanced treatments for blood cancers and disorders.</p>
+                              <p class="text-neutral-600 text-sm mb-3">Advanced treatments for blood cancers and
+                                disorders.</p>
                               <ul class="text-sm text-neutral-600 space-y-2">
                                 <li class="flex items-start space-x-2">
                                   <i class="fas fa-circle-dot text-[#FF5722] mt-1 text-xs"></i>
@@ -2304,7 +2462,10 @@
                           </div>
                           <div class="mt-6 bg-[#6A1B9A] bg-opacity-5 p-4 rounded-lg">
                             <h5 class="font-semibold text-neutral-800 mb-2">Why Choose Our Transplant Center?</h5>
-                            <p class="text-neutral-600 text-sm">Our transplant centers feature state-of-the-art facilities with dedicated transplant ICUs, advanced immunosuppression protocols, and comprehensive post-transplant care programs. We maintain international standards with high success rates and affordable costs compared to Western countries.</p>
+                            <p class="text-neutral-600 text-sm">Our transplant centers feature state-of-the-art
+                              facilities with dedicated transplant ICUs, advanced immunosuppression protocols, and
+                              comprehensive post-transplant care programs. We maintain international standards with high
+                              success rates and affordable costs compared to Western countries.</p>
                           </div>
                         </div>
                       </div>
@@ -2312,7 +2473,7 @@
                   </div>
                 </div>
               </div>
-          
+
               <div class="text-center mt-16">
                 <h3 class="font-bold text-2xl mb-6 text-neutral-800">Ready to Explore Your Treatment Options?</h3>
                 <a href="#contact"
@@ -2324,12 +2485,12 @@
               </div>
             </div>
           </section>
-          
-          
+
+
           <script>
             document.addEventListener('DOMContentLoaded', function () {
               const tabs = document.querySelectorAll('.specialty-tab');
-              
+
               // Add active tab styling function
               function setActiveTab(tab) {
                 // Remove active class from all tabs
@@ -2338,21 +2499,21 @@
                   t.classList.remove('bg-[#1E88E5]');
                   t.classList.remove('text-white');
                 });
-                
+
                 // Add active class to clicked tab
                 tab.classList.add('active');
                 tab.classList.add('bg-[#1E88E5]');
                 tab.classList.add('text-white');
-                
+
                 // Hide all tab panes
                 const tabPanes = document.querySelectorAll('.tab-pane');
                 tabPanes.forEach(pane => pane.classList.add('hidden'));
-                
+
                 // Show the selected tab pane
                 const targetId = tab.getAttribute('data-target');
                 document.getElementById(targetId).classList.remove('hidden');
                 document.getElementById(targetId).classList.add('animate__animated', 'animate__fadeIn');
-                
+
                 // Scroll tab into view if on mobile
                 if (window.innerWidth < 768) {
                   tab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
@@ -2370,30 +2531,34 @@
               if (initialActiveTab) {
                 setActiveTab(initialActiveTab);
               }
-              
+
               // Handle window resize events
-              window.addEventListener('resize', function() {
+              window.addEventListener('resize', function () {
                 // Update any responsive behaviors if needed
               });
             });
           </script>
-          
+
           <style>
             /* Hide scrollbar but keep functionality */
             .hide-scrollbar {
-              -ms-overflow-style: none;  /* IE and Edge */
-              scrollbar-width: none;  /* Firefox */
+              -ms-overflow-style: none;
+              /* IE and Edge */
+              scrollbar-width: none;
+              /* Firefox */
             }
+
             .hide-scrollbar::-webkit-scrollbar {
-              display: none;  /* Chrome, Safari, Opera */
+              display: none;
+              /* Chrome, Safari, Opera */
             }
-            
+
             /* Active tab styling */
             .specialty-tab.active {
               background-color: #1E88E5;
               color: white;
             }
-            
+
             /* Responsive adjustments for specialty tabs */
             @media (max-width: 640px) {
               .specialty-tab {
@@ -2415,20 +2580,26 @@
         <div class="container mx-auto px-4 md:px-6">
           <div class="text-center mb-16 animate__animated animate__fadeIn">
             <span class="text-[#26A69A] font-semibold text-lg">WELLNESS & RECOVERY SERVICES</span>
-            <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4 text-neutral-800">Holistic Healing & Rejuvenation in India</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4 text-neutral-800">Holistic Healing & Rejuvenation in
+              India</h2>
             <div class="w-24 h-1 bg-[#FF5722] mx-auto mb-6"></div>
             <p class="max-w-3xl mx-auto text-neutral-600">
-              Enhance your medical journey with our comprehensive wellness and recovery services. We offer full body health checkups, second opinion services, post-operative rehab, authentic wellness retreats (Ayurveda, Yoga, Spa), and post-cancer recovery programs—combining traditional Indian healing with modern medical expertise for complete mind-body rejuvenation.
+              Enhance your medical journey with our comprehensive wellness and recovery services. We offer full body
+              health checkups, second opinion services, post-operative rehab, authentic wellness retreats (Ayurveda,
+              Yoga, Spa), and post-cancer recovery programs—combining traditional Indian healing with modern medical
+              expertise for complete mind-body rejuvenation.
             </p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 max-w-7xl mx-auto">
             <!-- Full Body Health Checkups -->
-            <div class="bg-white rounded-xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-xl transition duration-300 animate__animated animate__fadeInUp">
+            <div
+              class="bg-white rounded-xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-xl transition duration-300 animate__animated animate__fadeInUp">
               <div class="mb-5 w-16 h-16 rounded-full bg-[#1E88E5]/10 flex items-center justify-center">
                 <i class="fas fa-notes-medical text-[#1E88E5] text-3xl"></i>
               </div>
               <h3 class="font-bold text-xl text-neutral-800 mb-3">Full Body Health Checkups</h3>
-              <p class="text-neutral-600 mb-4">Comprehensive executive health packages for early detection and prevention, tailored to your age, gender, and risk profile.</p>
+              <p class="text-neutral-600 mb-4">Comprehensive executive health packages for early detection and
+                prevention, tailored to your age, gender, and risk profile.</p>
               <ul class="text-sm text-neutral-700 space-y-2">
                 <li><i class="fas fa-check text-[#1E88E5] mr-2"></i>Blood tests & imaging</li>
                 <li><i class="fas fa-check text-[#1E88E5] mr-2"></i>Cardiac & cancer screening</li>
@@ -2436,12 +2607,15 @@
               </ul>
             </div>
             <!-- Second Opinion Services -->
-            <div class="bg-white rounded-xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-xl transition duration-300 animate__animated animate__fadeInUp" style="animation-delay:0.05s;">
+            <div
+              class="bg-white rounded-xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-xl transition duration-300 animate__animated animate__fadeInUp"
+              style="animation-delay:0.05s;">
               <div class="mb-5 w-16 h-16 rounded-full bg-[#26A69A]/10 flex items-center justify-center">
                 <i class="fas fa-user-md text-[#26A69A] text-3xl"></i>
               </div>
               <h3 class="font-bold text-xl text-neutral-800 mb-3">Second Opinion Services</h3>
-              <p class="text-neutral-600 mb-4">Get expert reviews of your diagnosis and treatment plan from India's top specialists for peace of mind and informed decisions.</p>
+              <p class="text-neutral-600 mb-4">Get expert reviews of your diagnosis and treatment plan from India's top
+                specialists for peace of mind and informed decisions.</p>
               <ul class="text-sm text-neutral-700 space-y-2">
                 <li><i class="fas fa-check text-[#26A69A] mr-2"></i>Remote medical review</li>
                 <li><i class="fas fa-check text-[#26A69A] mr-2"></i>Multi-specialty panel</li>
@@ -2449,12 +2623,15 @@
               </ul>
             </div>
             <!-- Post-Operative Rehab Programs -->
-            <div class="bg-white rounded-xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-xl transition duration-300 animate__animated animate__fadeInUp" style="animation-delay:0.1s;">
+            <div
+              class="bg-white rounded-xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-xl transition duration-300 animate__animated animate__fadeInUp"
+              style="animation-delay:0.1s;">
               <div class="mb-5 w-16 h-16 rounded-full bg-[#FF5722]/10 flex items-center justify-center">
                 <i class="fas fa-dumbbell text-[#FF5722] text-3xl"></i>
               </div>
               <h3 class="font-bold text-xl text-neutral-800 mb-3">Post-Operative Rehab</h3>
-              <p class="text-neutral-600 mb-4">Accelerate your recovery with customized physiotherapy, occupational therapy, and rehabilitation programs after surgery.</p>
+              <p class="text-neutral-600 mb-4">Accelerate your recovery with customized physiotherapy, occupational
+                therapy, and rehabilitation programs after surgery.</p>
               <ul class="text-sm text-neutral-700 space-y-2">
                 <li><i class="fas fa-check text-[#FF5722] mr-2"></i>Physiotherapy & pain management</li>
                 <li><i class="fas fa-check text-[#FF5722] mr-2"></i>Mobility & strength training</li>
@@ -2462,12 +2639,15 @@
               </ul>
             </div>
             <!-- Wellness Retreats (Ayurveda, Yoga, Spa) -->
-            <div class="bg-white rounded-xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-xl transition duration-300 animate__animated animate__fadeInUp" style="animation-delay:0.15s;">
+            <div
+              class="bg-white rounded-xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-xl transition duration-300 animate__animated animate__fadeInUp"
+              style="animation-delay:0.15s;">
               <div class="mb-5 w-16 h-16 rounded-full bg-[#8BC34A]/10 flex items-center justify-center">
                 <i class="fas fa-spa text-[#8BC34A] text-3xl"></i>
               </div>
               <h3 class="font-bold text-xl text-neutral-800 mb-3">Wellness Retreats</h3>
-              <p class="text-neutral-600 mb-4">Experience authentic Ayurveda, yoga, and spa therapies for detox, stress relief, and holistic well-being at India's top wellness centers.</p>
+              <p class="text-neutral-600 mb-4">Experience authentic Ayurveda, yoga, and spa therapies for detox, stress
+                relief, and holistic well-being at India's top wellness centers.</p>
               <ul class="text-sm text-neutral-700 space-y-2">
                 <li><i class="fas fa-check text-[#8BC34A] mr-2"></i>Panchakarma & herbal therapies</li>
                 <li><i class="fas fa-check text-[#8BC34A] mr-2"></i>Yoga & meditation sessions</li>
@@ -2475,12 +2655,15 @@
               </ul>
             </div>
             <!-- Post-Cancer Recovery Programs -->
-            <div class="bg-white rounded-xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-xl transition duration-300 animate__animated animate__fadeInUp" style="animation-delay:0.2s;">
+            <div
+              class="bg-white rounded-xl shadow-md p-8 flex flex-col items-center text-center hover:shadow-xl transition duration-300 animate__animated animate__fadeInUp"
+              style="animation-delay:0.2s;">
               <div class="mb-5 w-16 h-16 rounded-full bg-[#8E24AA]/10 flex items-center justify-center">
                 <i class="fas fa-ribbon text-[#8E24AA] text-3xl"></i>
               </div>
               <h3 class="font-bold text-xl text-neutral-800 mb-3">Post-Cancer Recovery</h3>
-              <p class="text-neutral-600 mb-4">Specialized programs for cancer survivors focusing on physical rehab, nutrition, emotional healing, and long-term wellness.</p>
+              <p class="text-neutral-600 mb-4">Specialized programs for cancer survivors focusing on physical rehab,
+                nutrition, emotional healing, and long-term wellness.</p>
               <ul class="text-sm text-neutral-700 space-y-2">
                 <li><i class="fas fa-check text-[#8E24AA] mr-2"></i>Oncology rehabilitation</li>
                 <li><i class="fas fa-check text-[#8E24AA] mr-2"></i>Diet & lifestyle counseling</li>
@@ -2494,7 +2677,8 @@
               class="inline-block px-8 py-4 bg-[#26A69A] hover:bg-[#1E88E5] text-white rounded-lg font-semibold transition-colors duration-300 shadow-lg animate__animated animate__pulse animate__infinite animate__slower">
               Inquire About Wellness & Recovery Services
             </a>
-            <p class="mt-4 text-neutral-600">Our team will help you select the perfect program for your health, recovery, and rejuvenation.</p>
+            <p class="mt-4 text-neutral-600">Our team will help you select the perfect program for your health,
+              recovery, and rejuvenation.</p>
           </div>
         </div>
       </section>
@@ -3505,7 +3689,8 @@
 
               <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
                 <!-- Contact Form -->
-                <iframe src="https://tally.so/r/mB0xy1" width="100%" height="650px" frameborder="0" marginheight="0" marginwidth="0" style="border-radius: 10px">Loading…</iframe>
+                <iframe src="https://tally.so/r/mB0xy1" width="100%" height="650px" frameborder="0" marginheight="0"
+                  marginwidth="0" style="border-radius: 10px">Loading…</iframe>
 
                 <!-- Contact Information -->
                 <div class="flex flex-col justify-between animate__animated animate__fadeInRight">
