@@ -33,23 +33,23 @@ const HeroComponent = {
                 Learn More
               </a>
             </div>
-            <div class="mt-8 bg-black/40 backdrop-blur-lg pt-4 pl-4 rounded-lg border border-white/20 shadow-xl w-full">
-              <div class="flex flex-col md:flex-row items-center gap-4">
-                <div class="w-full md:w-1/3">
-                  <img src="./ainbosi.png" alt="Mohammad Ainbosi" class="w-full max-w-[220px] mx-auto drop-shadow-2xl" />
+            <div class="mt-8 bg-black/40 backdrop-blur-lg pt-4 pr-4 rounded-lg border border-white/20 shadow-xl w-full">
+              <div class="flex flex-row items-center gap-4">
+                <div class="w-1/3">
+                  <img src="./ainbosi.png" alt="Mohammad Ainbosi" class="w-full max-w-[180px] sm:max-w-[220px] mx-auto drop-shadow-2xl" />
                 </div>
-                <div class="w-full md:w-2/3 text-center md:text-left">
-                  <div class="inline-block px-3 py-1 bg-[#1E88E5]/20 rounded-full text-sm mb-2">
+                <div class="w-2/3 text-left">
+                  <div class="inline-block px-3 py-1 bg-[#1E88E5]/20 rounded-full text-xs sm:text-sm mb-2">
                     <span class="flex items-center gap-1">
                       <i class="fas fa-map-marker-alt text-[#FF5722]"></i>
                       <span>From Jordan</span>
                     </span>
                   </div>
-                  <h3 class="text-xl md:text-2xl font-bold mb-1">Mr. Mohammad Ainbosi</h3>
-                  <p class="text-white/80 font-medium mb-3">Founder & President</p>
-                  <div class="flex items-center justify-center md:justify-start gap-2 bg-white/10 px-3 py-2 rounded-lg inline-flex mb-4">
+                  <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-1">Mr. Mohammad Ainbosi</h3>
+                  <p class="text-white/80 font-medium mb-2 sm:mb-3 text-sm sm:text-base">Founder & President</p>
+                  <div class="flex items-center gap-2 bg-white/10 px-3 py-1 sm:py-2 rounded-lg inline-flex mb-2 sm:mb-4">
                     <i class="fas fa-phone-alt text-[#FF5722]"></i>
-                    <a href="tel:+919839991913" class="hover:text-[#1E88E5] transition-colors">+91 98399 91913</a>
+                    <a href="tel:+919839991913" class="hover:text-[#1E88E5] transition-colors text-sm sm:text-base">+91 98399 91913</a>
                   </div>
                 </div>
               </div>
