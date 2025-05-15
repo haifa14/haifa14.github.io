@@ -38,7 +38,7 @@ const FooterComponent = {
             <ul class="space-y-3 text-sm">
               <li class="flex items-start">
                 <i class="fas fa-map-marker-alt w-5 text-[#1E88E5] mt-1 mr-2"></i>
-                <span>Varanasi, Uttar Pradesh, India</span>
+                <span>84, Sri Aurobindo Marg, Adchini, Block C, Adchini, New Delhi, Delhi 110017</span>
               </li>
               <li class="flex items-center">
                 <i class="fas fa-phone-alt w-5 text-[#1E88E5] mr-2"></i>
@@ -46,7 +46,7 @@ const FooterComponent = {
               </li>
               <li class="flex items-center">
                 <i class="fas fa-envelope w-5 text-[#1E88E5] mr-2"></i>
-                <a href="mailto:info@medretreats369.com" class="hover:text-[#FF5722] transition-colors">info@medretreats369.com</a>
+                <a href="mailto:contact@medretreats.in" class="hover:text-[#FF5722] transition-colors">contact@medretreats.in</a>
               </li>
                <li class="flex items-center">
                 <i class="fab fa-whatsapp w-5 text-[#1E88E5] mr-2"></i>
